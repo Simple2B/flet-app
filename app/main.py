@@ -1,10 +1,12 @@
 import flet as ft
+from app.config import config
+
+conf = config()
 
 
 def main(page: ft.Page):
-    page.title = "Flet counter example"
+    page.title = conf.APP_TITLE
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-
     txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
 
     def minus_click(e):
@@ -25,7 +27,3 @@ def main(page: ft.Page):
             alignment=ft.MainAxisAlignment.CENTER,
         )
     )
-
-
-if __name__ == "__main__":
-    ft.app(target=main)

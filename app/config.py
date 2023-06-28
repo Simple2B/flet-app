@@ -13,6 +13,7 @@ class BaseConfig(BaseSettings):
     ENV: str = "base"
     LOG_LEVEL: int = log.INFO
     APP_NAME: str = "Flet App"
+    APP_TITLE: str = "Flet App"
     SECRET_KEY: str
     SQLALCHEMY_TRACK_MODIFICATIONS: bool = False
     GITHUB_URL: str = "https://github.com/Simple2B/flet-app"
@@ -39,6 +40,11 @@ class BaseConfig(BaseSettings):
     FLET_NAME: str
     FLET_PORT: int
     FLET_HOST: str = "127.0.0.1"
+
+    # GitHub
+    GITHUB_CLIENT_ID: str
+    GITHUB_CLIENT_SECRET: str
+    GITHUB_REDIRECT_URL: str
 
     class Config:
         # `.env` takes priority over `project.env`
