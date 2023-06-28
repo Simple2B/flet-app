@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    # restart: always
+    command: poetry run flet run -w web.py
+    environment:
+      APP_ENV: production
+      FLET_PORT: 8000
+    ports:
+      - 127.0.0.1:${LOCAL_WEB_PORT:-8000}:8000
